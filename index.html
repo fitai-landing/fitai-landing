@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FitAI — твой ИИ‑тренер в кармане</title>
+  <meta name="description" content="FitAI — счётчик упражнений по камере, питание по фото и челленджи с друзьями.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --fitai-accent: #84cc16; } /* lime-500 */
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+  </style>
+</head>
+<body class="min-h-screen bg-neutral-950 text-white">
+  <!-- BG blobs -->
+  <div class="pointer-events-none fixed inset-0 -z-10">
+    <div class="absolute -top-32 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-lime-500/20 blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 h-96 w-96 translate-x-1/3 rounded-full bg-lime-400/10 blur-3xl"></div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-5">
+    <div class="flex items-center gap-3">
+      <div class="grid h-10 w-10 place-items-center rounded-2xl bg-lime-500 text-black font-extrabold">FA</div>
+      <span class="text-xl font-semibold tracking-wide">FitAI</span>
+    </div>
+    <nav class="hidden md:flex items-center gap-7 text-sm text-neutral-300">
+      <a href="#features" class="hover:text-white">Возможности</a>
+      <a href="#how" class="hover:text-white">Как это работает</a>
+      <a href="#premium" class="hover:text-white">Premium</a>
+    </nav>
+    <a href="#signup" class="rounded-xl bg-lime-500 px-4 py-2 font-semibold text-black hover:bg-lime-400 transition">Предзапуск</a>
+  </header>
+
+  <!-- Hero -->
+  <section class="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-4 py-10 md:grid-cols-2 md:py-20">
+    <div>
+      <h1 class="text-4xl font-extrabold leading-tight md:text-6xl">
+        Твой <span class="text-lime-400">ИИ‑тренер</span> в кармане
+      </h1>
+      <p class="mt-5 text-lg text-neutral-300 md:max-w-xl">
+        Счётчик упражнений по камере, питание по фото и челленджи с друзьями. Начни сегодня и держи прогресс каждый день.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a href="#signup" class="rounded-2xl bg-lime-500 px-6 py-3 text-black font-semibold hover:bg-lime-400 transition">Хочу на предзапуск</a>
+        <a href="#features" class="rounded-2xl border border-neutral-700 px-6 py-3 font-semibold text-white hover:border-neutral-500 transition">Узнать больше</a>
+      </div>
+      <div class="mt-6 flex items-center gap-4 text-sm text-neutral-400">
+        <span>⚡ Он‑девайс распознавание позы</span>
+        <span>•</span>
+        <span>🔒 Конфиденциальность по умолчанию</span>
+      </div>
+    </div>
+    <!-- Phone mockup -->
+    <div class="mx-auto w-full max-w-sm rounded-3xl border border-neutral-800 bg-neutral-900 p-5 shadow-2xl">
+      <div class="mx-auto h-[680px] w-full rounded-2xl bg-neutral-950 p-5">
+        <div class="mb-4 flex items-center justify-between">
+          <div class="text-neutral-400 text-sm">🔥 Челленджи</div>
+          <div class="rounded-full bg-lime-500/20 px-3 py-1 text-xs text-lime-300">Live</div>
+        </div>
+        <div class="space-y-3">
+          <div class="flex items-center justify-between rounded-2xl border border-neutral-800 bg-neutral-900/60 p-4">
+            <div class="flex items-center gap-3">
+              <div class="grid h-10 w-10 place-items-center rounded-xl bg-neutral-800 text-xl">📏</div>
+              <div>
+                <div class="font-semibold">30 дней планки</div>
+                <div class="text-xs text-neutral-400">Сложный</div>
+              </div>
+            </div>
+            <button class="rounded-xl bg-lime-500 px-3 py-1.5 text-sm font-semibold text-black">Go</button>
+          </div>
+          <div class="flex items-center justify-between rounded-2xl border border-neutral-800 bg-neutral-900/60 p-4">
+            <div class="flex items-center gap-3">
+              <div class="grid h-10 w-10 place-items-center rounded-xl bg-neutral-800 text-xl">🏋️</div>
+              <div>
+                <div class="font-semibold">100 приседаний в день</div>
+                <div class="text-xs text-neutral-400">Средний</div>
+              </div>
+            </div>
+            <button class="rounded-xl bg-lime-500 px-3 py-1.5 text-sm font-semibold text-black">Go</button>
+          </div>
+          <div class="flex items-center justify-between rounded-2xl border border-neutral-800 bg-neutral-900/60 p-4">
+            <div class="flex items-center gap-3">
+              <div class="grid h-10 w-10 place-items-center rounded-xl bg-neutral-800 text-xl">🍏</div>
+              <div>
+                <div class="font-semibold">7‑дневный детокс</div>
+                <div class="text-xs text-neutral-400">Лёгкий</div>
+              </div>
+            </div>
+            <button class="rounded-xl bg-lime-500 px-3 py-1.5 text-sm font-semibold text-black">Go</button>
+          </div>
+        </div>
+        <div class="mt-5 rounded-2xl border border-neutral-800 p-4">
+          <div class="mb-2 text-sm text-neutral-400">Сегодня</div>
+          <div class="text-2xl font-bold">Приседания 12 / 15</div>
+          <div class="mt-3 h-2 w-full rounded bg-neutral-800">
+            <div class="h-2 w-4/5 rounded bg-lime-500"></div>
+          </div>
+          <div class="mt-3 text-sm text-neutral-400">Подсказка: держи спину ровно</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="mx-auto w-full max-w-7xl px-4 py-16">
+    <h2 class="text-3xl font-extrabold md:text-4xl">Что умеет FitAI</h2>
+    <p class="mt-3 max-w-2xl text-neutral-300">Четыре столпа, которые делают спорт привычкой.</p>
+    <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div class="rounded-3xl border border-neutral-800 bg-neutral-900/50 p-6">
+        <div class="text-3xl">📷</div>
+        <div class="mt-3 text-lg font-semibold">Распознаёт упражнения</div>
+        <p class="mt-2 text-sm text-neutral-300">ИИ считает повторы и даёт подсказки по технике в реальном времени.</p>
+      </div>
+      <div class="rounded-3xl border border-neutral-800 bg-neutral-900/50 p-6">
+        <div class="text-3xl">🍽</div>
+        <div class="mt-3 text-lg font-semibold">Питание по фото</div>
+        <p class="mt-2 text-sm text-neutral-300">Фото блюда → калории и БЖУ. Советы, как сделать рацион лучше.</p>
+      </div>
+      <div class="rounded-3xl border border-neutral-800 bg-neutral-900/50 p-6">
+        <div class="text-3xl">🔥</div>
+        <div class="mt-3 text-lg font-semibold">Челленджи</div>
+        <p class="mt-2 text-sm text-neutral-300">Соревнуйся с друзьями и зарабатывай ачивки, очки и место в лидерборде.</p>
+      </div>
+      <div class="rounded-3xl border border-neutral-800 bg-neutral-900/50 p-6">
+        <div class="text-3xl">📊</div>
+        <div class="mt-3 text-lg font-semibold">Прогресс</div>
+        <p class="mt-2 text-sm text-neutral-300">Графики, streak, напоминания и умные цели на неделю.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="mx-auto w-full max-w-7xl px-4 py-16">
+    <h2 class="text-3xl font-extrabold md:text-4xl">Как это работает</h2>
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <div class="relative overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-900/50 p-6">
+        <div class="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-lime-500/10"></div>
+        <div class="text-6xl font-extrabold text-lime-500/80">1</div>
+        <div class="mt-4 text-lg font-semibold">Скачай приложение</div>
+        <p class="mt-2 text-neutral-300">iOS и Android. Регистрация ≤ 60 секунд.</p>
+      </div>
+      <div class="relative overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-900/50 p-6">
+        <div class="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-lime-500/10"></div>
+        <div class="text-6xl font-extrabold text-lime-500/80">2</div>
+        <div class="mt-4 text-lg font-semibold">Выбери челлендж</div>
+        <p class="mt-2 text-neutral-300">Планка, приседы, детокс — стартуй с того, что ближе.</p>
+      </div>
+      <div class="relative overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-900/50 p-6">
+        <div class="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-lime-500/10"></div>
+        <div class="text-6xl font-extrabод text-lime-500/80">3</div>
+        <div class="mt-4 text-lg font-semibold">Тренируйся с ИИ</div>
+        <p class="mt-2 text-neutral-300">Телефон считает повторы и следит за техникой. Делись прогрессом.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="premium" class="mx-auto w-full max-w-7xl px-4 py-16">
+    <h2 class="text-3xl font-extrabold md:text-4xl">Выбирай свой уровень</h2>
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      <div class="rounded-3xl border border-neutral-800 bg-neutral-900/50 p-8">
+        <div class="text-sm uppercase text-neutral-400">Бесплатно</div>
+        <div class="mt-2 text-3xl font-extrabold">0 ₽</div>
+        <ul class="mt-6 space-y-2 text-neutral-300">
+          <li>• 1 челлендж в месяц</li>
+          <li>• Базовые упражнения</li>
+          <li>• 5 фото еды в день</li>
+        </ul>
+        <a href="#signup" class="mt-8 inline-block rounded-xl border border-neutral-700 px-5 py-3 font-semibold hover:border-neutral-500">Начать бесплатно</a>
+      </div>
+      <div class="relative overflow-hidden rounded-3xl border border-lime-500/40 bg-neutral-900 p-8">
+        <div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-lime-500/10"></div>
+        <div class="text-sm uppercase text-lime-400">Premium</div>
+        <div class="mt-2 text-3xl font-extrabold"><span class="text-lime-400">699 ₽</span>/мес</div>
+        <ul class="mt-6 space-y-2 text-neutral-200">
+          <li>• Безлимит челленджей</li>
+          <li>• Персональные планы</li>
+          <li>• Подробная техника и аналитика</li>
+        </ul>
+        <a href="#signup" class="mt-8 inline-block rounded-xl bg-lime-500 px-5 py-3 font-semibold text-black hover:bg-lime-400">Ранний доступ Premium</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signup -->
+  <section id="signup" class="mx-auto w-full max-w-3xl px-4 py-20">
+    <div class="rounded-3xl border border-neutral-800 bg-neutral-900/60 p-8">
+      <h3 class="text-2xl font-extrabold md:text-3xl">Предзапись на бета‑тест</h3>
+      <p class="mt-2 text-neutral-300">Оставьте e‑mail или Telegram — пришлём приглашение, когда приложение будет готово.</p>
+
+      <div id="thanks" class="hidden mt-6 rounded-2xl border border-lime-500/40 bg-lime-500/10 p-5 text-lime-300">
+        ✅ Спасибо! Вы в списке. Мы напишем вам, когда стартуем.
+      </div>
+
+      <form id="leadForm" class="mt-6 grid gap-4 md:grid-cols-3">
+        <input type="email" id="email" required placeholder="Ваш e‑mail"
+          class="md:col-span-1 rounded-xl border border-neutral-700 bg-neutral-950 px-4 py-3 outline-none ring-lime-500/40 focus:border-neutral-500 focus:ring" />
+        <input type="text" id="tg" placeholder="@telegram (необязательно)"
+          class="md:col-span-1 rounded-xl border border-neutral-700 bg-neutral-950 px-4 py-3 outline-none ring-lime-500/40 focus:border-neutral-500 focus:ring" />
+        <button type="submit"
+          class="md:col-span-1 rounded-xl bg-lime-500 px-6 py-3 font-semibold text-black hover:bg-lime-400">Хочу на предзапуск</button>
+        <label class="md:col-span-3 flex items-start gap-3 text-sm text-neutral-300">
+          <input type="checkbox" id="agree" class="mt-1" />
+          <span>Согласен(а) с обработкой персональных данных и политикой конфиденциальности.</span>
+        </label>
+        <input type="hidden" id="utm_source" name="utm_source">
+        <input type="hidden" id="utm_medium" name="utm_medium">
+        <input type="hidden" id="utm_campaign" name="utm_campaign">
+      </form>
+      <p class="mt-3 text-xs text-neutral-500">* Для реальной отправки формы подключите backend (см. README).</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mx-auto w-full max-w-7xl px-4 pb-16 text-sm text-neutral-400">
+    <div class="h-px w-full bg-neutral-800 mb-6"></div>
+    <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center gap-3">
+        <div class="grid h-8 w-8 place-items-center rounded-xl bg-lime-500 text-black font-extrabold">FA</div>
+        <span>© 2025 FitAI. Все права защищены.</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-white">Политика конфиденциальности</a>
+        <a href="#" class="hover:text-white">Условия использования</a>
+        <a href="#signup" class="text-lime-300 hover:text-lime-200">Предзапуск</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // UTM capture
+    (function(){
+      const params = new URLSearchParams(window.location.search);
+      const m = (k) => params.get(k) || '';
+      document.getElementById('utm_source').value = m('utm_source');
+      document.getElementById('utm_medium').value = m('utm_medium');
+      document.getElementById('utm_campaign').value = m('utm_campaign');
+    })();
+
+    // Mock submit (replace with real backend)
+    document.getElementById('leadForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const agree = document.getElementById('agree').checked;
+      if(!email || !agree){ alert('Введите e‑mail и согласитесь с условиями'); return; }
+      // Save to localStorage (как временная мера)
+      const lead = {
+        ts: new Date().toISOString(),
+        email,
+        tg: document.getElementById('tg').value.trim(),
+        utm_source: document.getElementById('utm_source').value,
+        utm_medium: document.getElementById('utm_medium').value,
+        utm_campaign: document.getElementById('utm_campaign').value
+      };
+      const arr = JSON.parse(localStorage.getItem('fitai_leads') || '[]');
+      arr.push(lead); localStorage.setItem('fitai_leads', JSON.stringify(arr));
+      document.getElementById('thanks').classList.remove('hidden');
+      this.reset();
+      document.getElementById('agree').checked = false;
+    });
+  </script>
+</body>
+</html>
