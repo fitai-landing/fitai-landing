@@ -1,16 +1,26 @@
-## Hi there 👋
+FitAI — статический лендинг (v1)
+Дата: 2025-08-25
 
-<!--
-**fitai-landing/fitai-landing** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Содержимое архива:
+• index.html — одностраничный сайт на Tailwind CDN (без сборки).
+• / (больше файлов не требуется).
 
-Here are some ideas to get you started:
+Как развернуть:
+1) Откройте index.html локально — всё работает без сборки.
+2) Загрузите index.html на любой хостинг (например, на статический хостинг S3, GitHub Pages, Vercel, Netlify).
+3) Для подсчёта заявок подключите backend (FastAPI) или сервис формы.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Интеграция формы (коротко):
+— В index.html найдите блок <form id="leadForm">.
+— Замените обработчик JS на отправку через fetch:
+    fetch('https://ВАШ-ДОМЕН/api/leads', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)})
+
+UTM-метки:
+— Поля utm_source / utm_medium / utm_campaign автоматически снимаются из URL и кладутся в hidden-поля формы.
+
+Стиль:
+— Палитра: лайм #84cc16 + графит/чёрный.
+— Шрифт: Inter (Google Fonts).
+
+Лицензия:
+— Для внутренних нужд FitAI. Свободно модифицируйте.
